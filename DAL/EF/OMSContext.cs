@@ -14,7 +14,7 @@ namespace DAL.EF
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true);
             var dbConnectionInfo = builder.Build().GetSection("ConnectionStrings").GetSection("mssql").Value;
-            optionsBuilder.UseSqlServer(dbConnectionInfo);
+            optionsBuilder.UseMySQL(dbConnectionInfo);
             //optionsBuilder.UseMySQL("server=localhost; port=3500; database=OMS;user=root;password=tiger");
             //optionsBuilder.UseSqlServer("server=MONKIR\\SQLEXPRESS; initial catalog=Office Management System; integrated security=true; TrustServerCertificate=True");
             //optionsBuilder.UseSqlServer("server=DESKTOP-T8I7D7N\\SQLEXPRESS; initial catalog=OMS; integrated security=true; TrustServerCertificate=True");
